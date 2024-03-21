@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: btc_scheduler
+  data:
+    mongodb:
+      uri: mongodb://db:27017/btc_scheduler
+server:
+  port: 8080
