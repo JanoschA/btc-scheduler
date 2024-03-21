@@ -14,6 +14,8 @@ class BitvavoApi {
     }
 
     fun placeOrder(amount: String): JSONObject {
-        return bitvavo.placeOrder("BTC-EUR", "buy", "market", JSONObject(mapOf("amount" to amount)))
+        // amount is the amount of BTC to buy
+        // amountQuote is the amount of EUR to spend
+        return bitvavo.placeOrder("BTC-EUR", "buy", "market", JSONObject(mapOf("amountQuote" to amount)))
     }
 }

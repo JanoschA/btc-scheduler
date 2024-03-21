@@ -22,7 +22,7 @@ public class Bitvavo {
     String apiSecret;
     String restUrl;
     boolean debugging;
-    int window;
+    int window = 10000; // Window must be between 100 and 60000 ms.
     volatile int rateLimitRemaining = 1000;
     volatile long rateLimitReset = 0;
     volatile boolean rateLimitThreadStarted = false;

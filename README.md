@@ -17,15 +17,24 @@ BTC Scheduler is a robust cron scheduler designed to automate BTC purchases usin
 
 ## Setup
 
-Setting up BTC Scheduler is straightforward. You just need to start the Docker container and add the credentials from bitvavo.
+Setting up BTC Scheduler is straightforward. You just need to create a .env file in the root directory with the following environment variables:
 
-Commands:
+```bash
+API_KEY=YOUR_BITVAVO_API_KEY
+API_KEY=YOUR_BITVAVO_API_SECRET
+```
+
+Commands to build and run the Docker container are as follows:
 ```bash
 docker-compose build
-docker-compose up -e API_KEY=your_api_key API_SECRET=your_api_secret
+docker-compose up
 ```
 
 If you need help for the Docker Installation, please refer to the [Docker Installation Guide](DockerInstallation.md).
+
+## Bitvavo API Key
+
+You need to log in into your bitvavo account and create an API key. You can find the API key and secret in the API section of your account settings.
 
 ## Limitations
 

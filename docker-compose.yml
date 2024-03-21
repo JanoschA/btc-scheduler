@@ -4,15 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        API_KEY: ${API_KEY}
-        API_SECRET: ${API_SECRET}
+    environment:
+      API_KEY: ${API_KEY}
+      API_SECRET: ${API_SECRET}
+      SPRING_DATA_MONGODB_URI: mongodb://db:27017/btc_scheduler
     ports:
       - "8080:8080"
+      - "5005:5005"
     depends_on:
       - db
-    environment:
-      SPRING_DATA_MONGODB_URI: mongodb://db:27017/btc_scheduler
   db:
     image: mongo:latest
     ports:

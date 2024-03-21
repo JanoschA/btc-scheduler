@@ -9,4 +9,6 @@ FROM openjdk:21
 
 WORKDIR /app
 COPY --from=build /build/btc-scheduler-api/target/*.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-Xdebug","-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=*:5005","-jar","app.jar"]
+
+EXPOSE 5005
